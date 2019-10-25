@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:layout_margin="5dp">
 
     <TextView
         android:layout_width="wrap_content"
@@ -52,6 +53,7 @@
 
     </LinearLayout>
     <RadioGroup
+        android:id="@+id/myRadioGroup"
         android:layout_width="match_parent"
         android:weightSum="1"
         android:layout_height="wrap_content"
@@ -64,25 +66,19 @@
             android:layout_weight="0.15"
             android:text="Sexo:"/>
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.10"
-            android:text="M" />
+
         <RadioButton
             android:layout_width="0dp"
+            android:text="Masculino"
             android:layout_height="wrap_content"
-            android:layout_weight="0.15"
+            android:layout_weight="0.40"
             android:id="@+id/radioMacho"/>
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.10"
-            android:text="F"/>
+
         <RadioButton
+            android:text="Femenino"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.15"
+            android:layout_weight="0.40"
             android:id="@+id/radioFemenino"/>
     </RadioGroup>
     <LinearLayout
@@ -111,7 +107,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/myEditNacimiento"
         android:inputType="date"
-        android:hint="dd/mm/yyyy"/>
+        android:hint="dd/mm/yyyy"
+        android:clickable="true"
+        android:cursorVisible="false"
+        android:focusable="false"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -121,8 +120,25 @@
         android:layout_height="wrap_content"
         android:id="@+id/myEditCorreo"
         android:inputType="textEmailAddress"
-        android:hint="correo@mail.com"
-        />
+        android:hint="correo@mail.com"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <Button
+            android:onClick="NuevoFormulario"
+            android:id="@+id/btnNuevo"
+            android:text="Nuevo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:onClick="EnviarFormulario"
+            android:id="@+id/btnEnviar"
+            android:text="Enviar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 
 
 </LinearLayout>
